@@ -1,0 +1,10 @@
+---
+alwaysApply: true
+---
+
+# Project Base Context
+
+Always load the following files on each new chat:
+- `[project-root]/ai/1-roles/personal/squarespace-developer.md`
+- `[project-root]/ai/3-rules/guides/coding-standards.md`
+- `[project-root]/docs/project-context.md`

@@ -37,6 +37,12 @@ declare global {
   }
 }
 
+/**
+ * Parse a usable Date from an element.
+ *
+ * Prefers the `datetime` attribute (best for `<time datetime="...">`), then
+ * falls back to parsing the element's textContent. Returns null if parsing fails.
+ */
 function parseDateFromElement(element: Element): Date | null {
   // Try datetime attribute (most reliable)
   const datetime = element.getAttribute("datetime");
@@ -55,6 +61,12 @@ function parseDateFromElement(element: Element): Date | null {
   return null;
 }
 
+/**
+ * Store a parsed date on the item container as data attributes.
+ *
+ * These attributes can be used by CSS/JS for consistent display across multiple
+ * date render locations within the same item.
+ */
 function addDateAttributes(container: Element, date: Date) {
   const isoDate = date.toISOString().split("T")[0];
   container.setAttribute("data-date", isoDate);
@@ -63,6 +75,12 @@ function addDateAttributes(container: Element, date: Date) {
   container.setAttribute("data-day", String(date.getDate()));
 }
 
+/**
+ * Format a single date element using a token-based format string.
+ *
+ * Replaces tokens (ex: YYYY, MMM, DD) with `<span>` wrappers for styling.
+ * Note: This sets `innerHTML` intentionally to inject the token wrappers.
+ */
 function formatDateElement(
   element: Element,
   date: Date,
@@ -118,6 +136,10 @@ function formatDateElement(
   element.innerHTML = `<span class="${wrapperClass}">${formatted}</span>`;
 }
 
+/**
+ * Main entrypoint: read `window.dateConfig`, find items, parse a single source
+ * date per item, then apply consistent formatting across all configured displays.
+ */
 function processDates() {
   const config = window.dateConfig;
   if (!Array.isArray(config)) return;
@@ -155,6 +177,7 @@ if (document.readyState === "loading") {
   processDates();
 }
 
+// Squarespace SPA/AJAX navigation event (re-run formatting after page transitions)
 window.addEventListener("mercury:load", processDates);
 
 // Expose for manual calls
