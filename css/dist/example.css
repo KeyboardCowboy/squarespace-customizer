@@ -1,0 +1,13 @@
+/* Example per-site entrypoint.
+ *
+ * Copy this file to `css/projects/<site-slug>.scss` and compose your overrides.
+ * This file compiles to `css/dist/<site-slug>.css`.
+ *
+ * Library code lives in `css/_scss/`.
+ */
+/* Example: import/forward shared partials once you add them, e.g.:
+@use "typography";
+@use "buttons";
+@use "header";
+*/
+/* Start with site-specific overrides here. */

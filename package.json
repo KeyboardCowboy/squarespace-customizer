@@ -2,12 +2,18 @@
   "name": "squarespace-snippets",
   "private": true,
   "devDependencies": {
-    "sass": "^1.77.8"
+    "esbuild": "^0.24.2",
+    "sass": "^1.77.8",
+    "typescript": "^5.7.3"
   },
   "scripts": {
     "build:css": "sass --no-source-map --no-charset --style=expanded --load-path=css/_scss css/projects:css/dist",
     "build:css:min": "sass --no-source-map --no-charset --style=compressed --load-path=css/_scss css/projects:css/dist",
-    "watch:css": "sass --watch --no-source-map --no-charset --style=expanded --load-path=css/_scss css/projects:css/dist"
+    "watch:css": "sass --watch --no-source-map --no-charset --style=expanded --load-path=css/_scss css/projects:css/dist",
+    "build:js": "node -e \"require('child_process').execSync('npx --yes esbuild js/projects/*.ts --bundle --format=iife --platform=browser --outdir=js/dist', {stdio:'inherit'})\"",
+    "build:js:min": "node -e \"require('child_process').execSync('npx --yes esbuild js/projects/*.ts --bundle --format=iife --platform=browser --minify --outdir=js/dist', {stdio:'inherit'})\"",
+    "watch:js": "node -e \"require('child_process').execSync('npx --yes esbuild js/projects/*.ts --bundle --format=iife --platform=browser --outdir=js/dist --watch', {stdio:'inherit'})\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   }
 }
 
