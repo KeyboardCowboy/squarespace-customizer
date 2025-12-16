@@ -1,22 +1,18 @@
-/**
- * Zoom and drop shadow on hover for summary thumbnails.
- *
- * @return {void}
- */
+// Zoom and drop shadow on hover for summary thumbnails.
 @mixin zoom-thumbnail-on-hover() {
     .summary-thumbnail {
         overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Zoom and drop shadow on hover */
+    // Zoom and drop shadow on hover
     .summary-item:hover .summary-thumbnail,
     .summary-item:focus .summary-thumbnail {
         transform: scale(1.05);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
 
-    /* Ensure image doesn't cause issues */
+    // Ensure image doesn't cause issues
     .summary-thumbnail img {
         display: block;
     }

@@ -1,28 +1,6 @@
 /**
  * Squarespace site: Mountain Toad
- */
-/**
- * Base link styles
- * This is what Squarespace uses to indicate active links.
- *
- * @param {number} $size - The size of the underline in pixels
- * @return {void}
- */
-/**
- * Use this in combination with the date formatter to style the date components.
- *
- * @todo: Abstract colors and sizes to use global Squarespace variables.
- */
-/**
- * Match the font and size of a heading.
- *
- * @param {number} $level - The heading level (1-6)
- * @return {void}
- */
-/**
- * Zoom and drop shadow on hover for summary thumbnails.
- *
- * @return {void}
+ * See https://github.com/KeyboardCowboy/squarespace-customizer for more details.
  */
 /**
  * Variable definitions
@@ -41,8 +19,8 @@ h1 {
  * Links
  */
 .header-nav-item a:hover, .header-nav-item a:focus,
-.sqs-block-content a:hover,
-.sqs-block-content a:focus,
+.sqs-block-content a:not(.summary-thumbnail-container):hover,
+.sqs-block-content a:not(.summary-thumbnail-container):focus,
 .header-nav-folder-item a:hover,
 .header-nav-folder-item a:focus {
   background-image: linear-gradient(currentColor, currentColor);
@@ -63,20 +41,18 @@ h1 {
 /**
  * Summary Blocks
  */
-.summary-v2-block {
-  /* Set XL title to h3 size. */
-}
 .summary-v2-block .summary-block-setting-text-size-extralarge .summary-title {
+  /* Set XL title to h3 size. */
   font-family: var(--heading-font-font-family);
   font-size: var(--heading-3-size);
 }
-.summary-v2-block {
+.summary-v2-block .summary-title a {
   /* Set link interaction styles for the title. */
 }
 .summary-v2-block .summary-title a:hover, .summary-v2-block .summary-title a:focus {
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: repeat-x;
-  background-size: 3 3;
+  background-size: 3px 3px;
   background-position: 0 100%;
   background-position: 0 calc(100% - 0.1em);
 }
@@ -87,16 +63,10 @@ h1 {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.summary-v2-block {
-  /* Zoom and drop shadow on hover */
-}
 .summary-v2-block .summary-item:hover .summary-thumbnail,
 .summary-v2-block .summary-item:focus .summary-thumbnail {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-.summary-v2-block {
-  /* Ensure image doesn't cause issues */
 }
 .summary-v2-block .summary-thumbnail img {
   display: block;
@@ -105,29 +75,22 @@ h1 {
 /**
  * Event List Tweaks
  */
-.sqs-events-collection-list {
-  /* Increase font size of itemlist header */
-}
 .sqs-events-collection-list h1.eventlist-title,
 .sqs-events-collection-list h1.eventitem-title {
+  /* Increase font size of itemlist header */
   font-family: var(--heading-font-font-family) !important;
   font-size: var(--heading-3-size) !important;
 }
-.sqs-events-collection-list {
-  /* Add margins around event list item button. */
-}
 .sqs-events-collection-list .eventlist-column-info a.eventlist-button {
+  /* Add margins around event list item button. */
   margin: 1em 0;
 }
-.sqs-events-collection-list {
-  /* Round the corners on the date card */
-}
 .sqs-events-collection-list .summary-thumbnail-event-date {
+  /* Round the corners on the date card */
   border-radius: 3px;
 }
 .sqs-events-collection-list {
   /* Style the date components created from the date formatter. */
-  /* Break the date components into separate blocks. */
 }
 .sqs-events-collection-list span.summary-thumbnail-event-date-custom > span {
   display: block;
@@ -136,14 +99,8 @@ h1 {
   line-height: 14px;
   padding: 2px 0;
 }
-.sqs-events-collection-list span.summary-thumbnail-event-date-custom {
-  /* Style the weekday component. */
-}
 .sqs-events-collection-list span.summary-thumbnail-event-date-custom .weekday-short {
   font-size: 12px;
-}
-.sqs-events-collection-list span.summary-thumbnail-event-date-custom {
-  /* Style the month component. */
 }
 .sqs-events-collection-list span.summary-thumbnail-event-date-custom .month-short {
   font-weight: bold;
@@ -153,10 +110,8 @@ h1 {
 /**
  * Accordions
  */
-.accordion-block {
+.accordion-block h2.accordion-item__title-wrapper {
   /* Shrink h2 accordion titles down to h3 sizes. */
-}
-.accordion-block .sqs-block-accordion h2.accordion-item__title-wrapper {
   font-family: var(--heading-font-font-family) !important;
   font-size: var(--heading-3-size) !important;
 }

@@ -1,5 +1,6 @@
 /**
  * Squarespace site: Mountain Toad
+ * See https://github.com/KeyboardCowboy/squarespace-customizer for more details.
  */
 
 @use "../_scss/links" as *;
@@ -24,7 +25,7 @@ h1 {
  * Links
  */
 .header-nav-item a,
-.sqs-block-content a,
+.sqs-block-content a:not(.summary-thumbnail-container),
 .header-nav-folder-item a {
     @include base-link-interaction();
 }
@@ -42,14 +43,14 @@ h1 {
  */
 .summary-v2-block {
 
-    /* Set XL title to h3 size. */
     .summary-block-setting-text-size-extralarge .summary-title {
+        /* Set XL title to h3 size. */
         @include match-heading(3);
     }
 
-    /* Set link interaction styles for the title. */
     .summary-title a {
-        @include base-link-interaction(3);
+        /* Set link interaction styles for the title. */
+        @include base-link-interaction(3px);
     }
 
     /* Zoom and drop shadow on hover for thumbnail. */
@@ -61,19 +62,19 @@ h1 {
  */
 .sqs-events-collection-list {
 
-    /* Increase font size of itemlist header */
     h1.eventlist-title,
     h1.eventitem-title {
+        /* Increase font size of itemlist header */
         @include match-heading(3, true);
     }
 
-    /* Add margins around event list item button. */
     .eventlist-column-info a.eventlist-button {
+        /* Add margins around event list item button. */
         margin: 1em 0;
     }
 
-    /* Round the corners on the date card */
     .summary-thumbnail-event-date {
+        /* Round the corners on the date card */
         border-radius: 3px;
     }
 
@@ -86,8 +87,8 @@ h1 {
  */
 .accordion-block {
 
-    /* Shrink h2 accordion titles down to h3 sizes. */
-    .sqs-block-accordion h2.accordion-item__title-wrapper {
+    h2.accordion-item__title-wrapper {
+        /* Shrink h2 accordion titles down to h3 sizes. */
         @include match-heading(3, true);
     }
 }

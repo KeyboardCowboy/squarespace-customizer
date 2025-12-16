@@ -1,9 +1,7 @@
-/**
- * Match the font and size of a heading.
- *
- * @param {number} $level - The heading level (1-6)
- * @return {void}
- */
+// Match the font and size of a heading.
+// $level: The heading level (1-4).
+// $force: Whether to force the match (boolean).
+// @return {void}
 @mixin match-heading($level: 1, $force: false) {
   font-family: var(--heading-font-font-family) #{if(sass($force): "!important"; else: "")};
   font-size: var(--heading-#{$level}-size) #{if(sass($force): "!important"; else: "")};
