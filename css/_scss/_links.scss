@@ -1,0 +1,17 @@
+/**
+ * Base link styles
+ * This is what Squarespace uses to indicate active links.
+ *
+ * @param {number} $size - The size of the underline in pixels
+ * @return {void}
+ */
+@mixin base-link-interaction($size: 1px) {
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: repeat-x;
+    background-size: $size $size;
+    background-position: 0 100%;
+    background-position: 0 calc(100% - 0.1em);
+  }
+}

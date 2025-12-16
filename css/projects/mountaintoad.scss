@@ -1,0 +1,93 @@
+/**
+ * Squarespace site: Mountain Toad
+ */
+
+@use "../_scss/links" as *;
+@use "../_scss/dates" as *;
+@use "../_scss/typography" as *;
+@use "../_scss/summary-blocks" as *;
+
+/**
+ * Variable definitions
+ */
+:root {
+    --heading-font-font-family: "cheap-pine-sans", sans-serif;
+    --heading-font-alt-font-family: "cheap-pine", sans-serif;
+}
+
+/* Make H1 headings a special variant of the header font. */
+h1 {
+    font-family: var(--heading-font-alt-font-family);
+}
+
+/**
+ * Links
+ */
+.header-nav-item a,
+.sqs-block-content a,
+.header-nav-folder-item a {
+    @include base-link-interaction();
+}
+
+/**
+ * Main Menu tweaks
+ */
+/* Increase submenu spacing */
+.header-nav-folder-item {
+    padding: .25rem .5rem
+}
+
+/**
+ * Summary Blocks
+ */
+.summary-v2-block {
+
+    /* Set XL title to h3 size. */
+    .summary-block-setting-text-size-extralarge .summary-title {
+        @include match-heading(3);
+    }
+
+    /* Set link interaction styles for the title. */
+    .summary-title a {
+        @include base-link-interaction(3);
+    }
+
+    /* Zoom and drop shadow on hover for thumbnail. */
+    @include zoom-thumbnail-on-hover();
+}
+
+/**
+ * Event List Tweaks
+ */
+.sqs-events-collection-list {
+
+    /* Increase font size of itemlist header */
+    h1.eventlist-title,
+    h1.eventitem-title {
+        @include match-heading(3, true);
+    }
+
+    /* Add margins around event list item button. */
+    .eventlist-column-info a.eventlist-button {
+        margin: 1em 0;
+    }
+
+    /* Round the corners on the date card */
+    .summary-thumbnail-event-date {
+        border-radius: 3px;
+    }
+
+    /* Style the date components created from the date formatter. */
+    @include theme-formatted-date-card();
+}
+
+/**
+ * Accordions
+ */
+.accordion-block {
+
+    /* Shrink h2 accordion titles down to h3 sizes. */
+    .sqs-block-accordion h2.accordion-item__title-wrapper {
+        @include match-heading(3, true);
+    }
+}

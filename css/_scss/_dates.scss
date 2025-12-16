@@ -1,0 +1,29 @@
+/**
+ * Use this in combination with the date formatter to style the date components.
+ *
+ * @todo: Abstract colors and sizes to use global Squarespace variables.
+ */
+@mixin theme-formatted-date-card() {
+
+    /* Break the date components into separate blocks. */
+    span.summary-thumbnail-event-date-custom {
+        >span {
+            display: block;
+            color: #333;
+            font-size: 14px;
+            line-height: 14px;
+            padding: 2px 0;
+        }
+
+        /* Style the weekday component. */
+        .weekday-short {
+            font-size: 12px;
+        }
+
+        /* Style the month component. */
+        .month-short {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}
