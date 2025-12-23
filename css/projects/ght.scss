@@ -1,5 +1,6 @@
 @use "../_scss/links" as *;
 @use "../_scss/navigation" as *;
+@use "../_scss/typography" as *;
 
 h2,
 h3,
@@ -12,6 +13,11 @@ h4 {
 
 /* Set submenu spacing. */
 @include set-submenu-spacing();
+
+/* Test dynamic font sizing to match SS's default rules. */
+h4.accordion-item__title-wrapper {
+  @include set-heading-font-size(2);
+}
 
 /* Blog Metadata Tweaks*/
 .blog-item-category {

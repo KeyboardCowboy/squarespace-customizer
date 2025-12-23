@@ -11,3 +11,16 @@
 @use "header";
 */
 /* Start with site-specific overrides here. */
+h4.accordion-item__title-wrapper {
+  line-height: calc(var(--heading-font-line-height) * (1 + (1 - var(--heading-2-size-value)) / 25));
+}
+@media screen and (min-width: 1456px) {
+  h4.accordion-item__title-wrapper {
+    font-size: calc(var(--heading-2-size-value) * 1rem);
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: 1455px) and (orientation: landscape) {
+  h4.accordion-item__title-wrapper {
+    font-size: calc((var(--heading-2-size-value) - 1) * 1.2vw + 1rem);
+  }
+}

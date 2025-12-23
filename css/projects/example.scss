@@ -13,4 +13,9 @@
 */
 
 /* Start with site-specific overrides here. */
+@use "../_scss/typography" as *;
 
+
+h4.accordion-item__title-wrapper {
+    @include set-heading-font-size(2);
+}

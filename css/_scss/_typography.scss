@@ -6,3 +6,19 @@
   font-family: var(--heading-font-font-family) #{if(sass($force): "!important"; else: "")};
   font-size: var(--heading-#{$level}-size) #{if(sass($force): "!important"; else: "")};
 }
+
+// Override text font size to match a given heading level.
+// $level: The heading level (1-4).
+// @return {void}
+@mixin set-heading-font-size($level: 1) {
+  line-height: calc(var(--heading-font-line-height) * (1 + (1 - var(--heading-#{$level}-size-value)) / 25));
+
+  @media screen and (min-width: 1456px) {
+    font-size: calc(var(--heading-#{$level}-size-value) * 1rem);
+  }
+
+  @media screen and (min-width: 768px),
+  screen and (max-width: calc(1455px)) and (orientation: landscape) {
+      font-size: calc((var(--heading-#{$level}-size-value) - 1) * 1.2vw + 1rem);
+  }
+}
