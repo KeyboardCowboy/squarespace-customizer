@@ -15,9 +15,7 @@ h1 {
   font-family: var(--heading-font-alt-font-family);
 }
 
-/**
- * Links
- */
+/* Set base link interaction styles for all links. */
 .header-nav-item a:hover, .header-nav-item a:focus,
 .sqs-block-content a:not(.summary-thumbnail-container):hover,
 .sqs-block-content a:not(.summary-thumbnail-container):focus,
@@ -30,10 +28,18 @@ h1 {
   background-position: 0 calc(100% - 0.1em);
 }
 
-/**
- * Main Menu tweaks
- */
-/* Increase submenu spacing */
+body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  background-position: 0 100%;
+  background-position: 0 calc(100% - 0.1em);
+}
+body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a .header-nav-folder-item-content {
+  background-image: none;
+}
+
+/* Set submenu spacing. */
 .header-nav-folder-item {
   padding: 0.25rem 0.5rem;
 }
@@ -71,6 +77,23 @@ h1 {
 .summary-v2-block .summary-thumbnail img {
   display: block;
 }
+.summary-v2-block {
+  /* Style the date components created from the date formatter. */
+}
+.summary-v2-block .summary-thumbnail-event-date-custom > span {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 2px 0;
+}
+.summary-v2-block .summary-thumbnail-event-date-custom .weekday-short {
+  font-size: 12px;
+}
+.summary-v2-block .summary-thumbnail-event-date-custom .month-short {
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
 /**
  * Event List Tweaks
@@ -88,23 +111,6 @@ h1 {
 .sqs-events-collection-list .summary-thumbnail-event-date {
   /* Round the corners on the date card */
   border-radius: 3px;
-}
-.sqs-events-collection-list {
-  /* Style the date components created from the date formatter. */
-}
-.sqs-events-collection-list span.summary-thumbnail-event-date-custom > span {
-  display: block;
-  color: #333;
-  font-size: 14px;
-  line-height: 14px;
-  padding: 2px 0;
-}
-.sqs-events-collection-list span.summary-thumbnail-event-date-custom .weekday-short {
-  font-size: 12px;
-}
-.sqs-events-collection-list span.summary-thumbnail-event-date-custom .month-short {
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 /**

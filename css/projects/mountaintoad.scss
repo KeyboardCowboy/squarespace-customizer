@@ -7,6 +7,7 @@
 @use "../_scss/dates" as *;
 @use "../_scss/typography" as *;
 @use "../_scss/summary-blocks" as *;
+@use "../_scss/navigation" as *;
 
 /**
  * Variable definitions
@@ -21,22 +22,11 @@ h1 {
     font-family: var(--heading-font-alt-font-family);
 }
 
-/**
- * Links
- */
-.header-nav-item a,
-.sqs-block-content a:not(.summary-thumbnail-container),
-.header-nav-folder-item a {
-    @include base-link-interaction();
-}
+/* Set base link interaction styles for all links. */
+@include set-base-link-interaction();
 
-/**
- * Main Menu tweaks
- */
-/* Increase submenu spacing */
-.header-nav-folder-item {
-    padding: .25rem .5rem
-}
+/* Set submenu spacing. */
+@include set-submenu-spacing();
 
 /**
  * Summary Blocks
@@ -55,6 +45,9 @@ h1 {
 
     /* Zoom and drop shadow on hover for thumbnail. */
     @include zoom-thumbnail-on-hover();
+
+    /* Style the date components created from the date formatter. */
+    @include theme-formatted-date-card();
 }
 
 /**
@@ -77,9 +70,6 @@ h1 {
         /* Round the corners on the date card */
         border-radius: 3px;
     }
-
-    /* Style the date components created from the date formatter. */
-    @include theme-formatted-date-card();
 }
 
 /**

@@ -1,0 +1,123 @@
+@use "../_scss/links" as *;
+@use "../_scss/navigation" as *;
+
+h2,
+h3,
+h4 {
+  margin: 2rem 0 1rem 0;
+}
+
+/* Set base link interaction styles for all links. */
+@include set-base-link-interaction();
+
+/* Set submenu spacing. */
+@include set-submenu-spacing();
+
+/* Blog Metadata Tweaks*/
+.blog-item-category {
+  background-color: #ddd;
+  padding: 0.25em 0.5em;
+  border-radius: 100px;
+}
+
+.blog-item-author-date-wrapper {
+  margin-top: 2em;
+}
+
+.blog-item-wrapper {
+  .blog-item-author-date-wrapper {
+    .blog-meta-item {
+      span {
+        color: #aaa;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+/* Add an overlay to slideshow images */
+.user-items-list-banner-slideshow {
+  .slide-media-container {
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.62);
+      content: "";
+    }
+  }
+}
+
+/* Greyscale the tour boxes on the homepage */
+body.homepage {
+  .fluid-engine {
+    .fe-block:nth-child(1) {
+      .sqs-block-image {
+        .sqs-image-content {
+          margin-right: 2px;
+        }
+      }
+    }
+
+    .fe-block:nth-child(3) {
+      .sqs-block-image {
+        .sqs-image-content {
+          margin-left: 2px;
+        }
+      }
+    }
+  }
+
+  .sqs-block-image {
+    a.sqs-block-image-link {
+      img {
+        filter: grayscale(1);
+        transition: 0.2s filter ease-in-out;
+      }
+
+      &:hover img,
+      &:active img {
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+
+/* Blockquote Enhancement */
+.sqs-block.sqs-block-quote {
+  &.sqs-background-enabled {
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  figure {
+    border-left: 5px solid var(--siteBackgroundColor);
+    padding-left: 2em;
+  }
+}
+
+@media (min-width: 1180px) {
+  .sqs-block.sqs-block-quote {
+    &.sqs-background-enabled {
+      width: 125%;
+      margin-left: -12.5%;
+    }
+  }
+}
+
+/* Blog styles */
+.blog-item-author-date-wrapper {
+  margin-top: 0;
+}
+
+.blog-item-wrapper {
+  .blog-item-author-date-wrapper {
+    .blog-meta-item {
+      span {
+        color: var(--tweak-blog-item-meta-color);
+      }
+    }
+  }
+}

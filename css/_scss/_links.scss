@@ -1,6 +1,7 @@
 // Base link styles: for indicating active links in Squarespace.
 // $size: underline thickness in pixels.
 @mixin base-link-interaction($size: 1px) {
+
   &:hover,
   &:focus {
     background-image: linear-gradient(currentColor, currentColor);
@@ -8,5 +9,29 @@
     background-size: $size $size;
     background-position: 0 100%;
     background-position: 0 calc(100% - 0.1em);
+  }
+}
+
+// Starterkit mixin to set base link interaction styles for all links.
+@mixin set-base-link-interaction($size: 1px) {
+
+  .header-nav-item a,
+  .sqs-block-content a:not(.summary-thumbnail-container),
+  .header-nav-folder-item a {
+    @include base-link-interaction($size);
+  }
+
+  body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active {
+    a {
+      background-image: linear-gradient(currentColor, currentColor);
+      background-repeat: repeat-x;
+      background-size: $size $size;
+      background-position: 0 100%;
+      background-position: 0 calc(100% - 0.1em);
+
+      .header-nav-folder-item-content {
+        background-image: none;
+      }
+    }
   }
 }

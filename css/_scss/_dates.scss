@@ -2,7 +2,7 @@
 // Use this in combination with the date formatter to style the date components.
 @mixin theme-formatted-date-card() {
     // Break the date components into separate blocks.
-    span.summary-thumbnail-event-date-custom {
+    .summary-thumbnail-event-date-custom {
         >span {
             display: block;
             color: #333;

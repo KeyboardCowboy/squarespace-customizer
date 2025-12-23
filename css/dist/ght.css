@@ -1,0 +1,101 @@
+h2,
+h3,
+h4 {
+  margin: 2rem 0 1rem 0;
+}
+
+/* Set base link interaction styles for all links. */
+.header-nav-item a:hover, .header-nav-item a:focus,
+.sqs-block-content a:not(.summary-thumbnail-container):hover,
+.sqs-block-content a:not(.summary-thumbnail-container):focus,
+.header-nav-folder-item a:hover,
+.header-nav-folder-item a:focus {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  background-position: 0 100%;
+  background-position: 0 calc(100% - 0.1em);
+}
+
+body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  background-position: 0 100%;
+  background-position: 0 calc(100% - 0.1em);
+}
+body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a .header-nav-folder-item-content {
+  background-image: none;
+}
+
+/* Set submenu spacing. */
+.header-nav-folder-item {
+  padding: 0.25rem 0.5rem;
+}
+
+/* Blog Metadata Tweaks*/
+.blog-item-category {
+  background-color: #ddd;
+  padding: 0.25em 0.5em;
+  border-radius: 100px;
+}
+
+.blog-item-author-date-wrapper {
+  margin-top: 2em;
+}
+
+.blog-item-wrapper .blog-item-author-date-wrapper .blog-meta-item span {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Add an overlay to slideshow images */
+.user-items-list-banner-slideshow .slide-media-container:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.62);
+  content: "";
+}
+
+/* Greyscale the tour boxes on the homepage */
+body.homepage .fluid-engine .fe-block:nth-child(1) .sqs-block-image .sqs-image-content {
+  margin-right: 2px;
+}
+body.homepage .fluid-engine .fe-block:nth-child(3) .sqs-block-image .sqs-image-content {
+  margin-left: 2px;
+}
+body.homepage .sqs-block-image a.sqs-block-image-link img {
+  filter: grayscale(1);
+  transition: 0.2s filter ease-in-out;
+}
+body.homepage .sqs-block-image a.sqs-block-image-link:hover img, body.homepage .sqs-block-image a.sqs-block-image-link:active img {
+  filter: grayscale(0);
+}
+
+/* Blockquote Enhancement */
+.sqs-block.sqs-block-quote.sqs-background-enabled {
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.sqs-block.sqs-block-quote figure {
+  border-left: 5px solid var(--siteBackgroundColor);
+  padding-left: 2em;
+}
+
+@media (min-width: 1180px) {
+  .sqs-block.sqs-block-quote.sqs-background-enabled {
+    width: 125%;
+    margin-left: -12.5%;
+  }
+}
+/* Blog styles */
+.blog-item-author-date-wrapper {
+  margin-top: 0;
+}
+
+.blog-item-wrapper .blog-item-author-date-wrapper .blog-meta-item span {
+  color: var(--tweak-blog-item-meta-color);
+}
