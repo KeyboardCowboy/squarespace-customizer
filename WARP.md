@@ -6,6 +6,8 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 This is a personal library of reusable **Sass (SCSS)** and **TypeScript** snippets for building Squarespace site customizations. The workflow is based on composition: small, reusable library code is assembled into per-site entrypoints, compiled to distributable outputs, and either pasted into Squarespace Custom CSS/Code Injection or hosted remotely.
 
+**GitHub Repository**: `KeyboardCowboy/squarespace-customizer`
+
 ## Common Commands
 
 ### Setup

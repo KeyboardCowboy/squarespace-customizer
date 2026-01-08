@@ -17,6 +17,7 @@
 
   .header-nav-item a,
   .sqs-block-content a:not(.summary-thumbnail-container),
+  .sqs-block-content a:not(.sqs-block-button-element),
   .header-nav-folder-item a {
     @include base-link-interaction($size);
   }

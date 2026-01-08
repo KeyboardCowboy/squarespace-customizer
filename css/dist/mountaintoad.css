@@ -19,6 +19,8 @@ h1 {
 .header-nav-item a:hover, .header-nav-item a:focus,
 .sqs-block-content a:not(.summary-thumbnail-container):hover,
 .sqs-block-content a:not(.summary-thumbnail-container):focus,
+.sqs-block-content a:not(.sqs-block-button-element):hover,
+.sqs-block-content a:not(.sqs-block-button-element):focus,
 .header-nav-folder-item a:hover,
 .header-nav-folder-item a:focus {
   background-image: linear-gradient(currentColor, currentColor);

@@ -1,3 +1,37 @@
+/* ===================================================================
+   Golden History Tours - Announcement Banner Hover/Active States
+   =================================================================== */
+/* ===================================================================
+   Accessibility Improvements
+   =================================================================== */
+/* Focus state for keyboard navigation */
+.sqs-announcement-bar-dropzone a:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.sqs-announcement-bar-dropzone a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .sqs-announcement-bar-dropzone a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+  }
+}
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .sqs-announcement-bar-dropzone a,
+  .sqs-announcement-bar-dropzone a::after {
+    transition: none;
+  }
+  .sqs-announcement-bar-dropzone a:hover,
+  .sqs-announcement-bar-dropzone a:active {
+    transform: none;
+  }
+}
 h2,
 h3,
 h4 {
@@ -8,6 +42,8 @@ h4 {
 .header-nav-item a:hover, .header-nav-item a:focus,
 .sqs-block-content a:not(.summary-thumbnail-container):hover,
 .sqs-block-content a:not(.summary-thumbnail-container):focus,
+.sqs-block-content a:not(.sqs-block-button-element):hover,
+.sqs-block-content a:not(.sqs-block-button-element):focus,
 .header-nav-folder-item a:hover,
 .header-nav-folder-item a:focus {
   background-image: linear-gradient(currentColor, currentColor);
@@ -31,21 +67,6 @@ body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a 
 /* Set submenu spacing. */
 .header-nav-folder-item {
   padding: 0.25rem 0.5rem;
-}
-
-/* Test dynamic font sizing to match SS's default rules. */
-h4.accordion-item__title-wrapper {
-  line-height: calc(var(--heading-font-line-height) * (1 + (1 - var(--heading-2-size-value)) / 25));
-}
-@media screen and (min-width: 1456px) {
-  h4.accordion-item__title-wrapper {
-    font-size: calc(var(--heading-2-size-value) * 1rem);
-  }
-}
-@media screen and (min-width: 768px), screen and (max-width: 1455px) and (orientation: landscape) {
-  h4.accordion-item__title-wrapper {
-    font-size: calc((var(--heading-2-size-value) - 1) * 1.2vw + 1rem);
-  }
 }
 
 /* Blog Metadata Tweaks*/
@@ -113,4 +134,39 @@ body.homepage .sqs-block-image a.sqs-block-image-link:hover img, body.homepage .
 
 .blog-item-wrapper .blog-item-author-date-wrapper .blog-meta-item span {
   color: var(--tweak-blog-item-meta-color);
+}
+
+/* Target the Squarespace announcement bar container */
+.sqs-announcement-bar-dropzone {
+  transition: background-color 0.3s ease;
+}
+
+/* If the entire announcement bar is wrapped in a link */
+.sqs-announcement-bar-dropzone a {
+  display: block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Cursor indication */
+.sqs-announcement-bar-dropzone a {
+  cursor: pointer;
+}
+
+/* Alternative approach: Underline effect that slides in */
+.sqs-announcement-bar-dropzone a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  opacity: 0.5;
+}
+
+.sqs-announcement-bar-dropzone a:hover::after {
+  transform: scaleX(1);
 }

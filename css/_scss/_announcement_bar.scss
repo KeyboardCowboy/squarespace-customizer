@@ -1,0 +1,110 @@
+/* ===================================================================
+   Golden History Tours - Announcement Banner Hover/Active States
+   =================================================================== */
+@mixin set-announcement-bar-interaction($style: underline) {
+
+    /* Target the Squarespace announcement bar container */
+    .sqs-announcement-bar-dropzone {
+        transition: background-color 0.3s ease;
+    }
+
+    /* If the entire announcement bar is wrapped in a link */
+    .sqs-announcement-bar-dropzone a {
+        display: block;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    /* Cursor indication */
+    .sqs-announcement-bar-dropzone a {
+        cursor: pointer;
+    }
+
+    @if $style == "underline" {
+        @include _announcement-bar-underline();
+    }
+    @if $style == "brightness" {
+        @include _announcement-bar-brightness();
+    }
+    @if $style == "scale" {
+        @include _announcement-bar-scale();
+    }
+    @if $style == "color" {
+        @include _announcement-bar-color();
+    }
+}
+
+@mixin _announcement-bar-underline() {
+
+    /* Alternative approach: Underline effect that slides in */
+    .sqs-announcement-bar-dropzone a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: currentColor;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        opacity: 0.5;
+    }
+
+    .sqs-announcement-bar-dropzone a:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+@mixin _announcement-bar-brightness() {
+    .sqs-announcement-bar-dropzone a:hover {
+        filter: brightness(1.15);
+    }
+}
+
+@mixin _announcement-bar-scale() {
+    .sqs-announcement-bar-dropzone a:hover {
+        transform: scale(1.02);
+    }
+}
+
+@mixin _announcement-bar-color() {
+    .sqs-announcement-bar-dropzone a:hover {
+        color: var(--accent-color);
+    }
+}
+
+/* ===================================================================
+   Accessibility Improvements
+   =================================================================== */
+
+/* Focus state for keyboard navigation */
+.sqs-announcement-bar-dropzone a:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+.sqs-announcement-bar-dropzone a:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .sqs-announcement-bar-dropzone a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+
+    .sqs-announcement-bar-dropzone a,
+    .sqs-announcement-bar-dropzone a::after {
+        transition: none;
+    }
+
+    .sqs-announcement-bar-dropzone a:hover,
+    .sqs-announcement-bar-dropzone a:active {
+        transform: none;
+    }
+}
