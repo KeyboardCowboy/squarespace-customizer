@@ -16,8 +16,7 @@
 @mixin set-base-link-interaction($size: 1px) {
 
   .header-nav-item a,
-  .sqs-block-content a:not(.summary-thumbnail-container),
-  .sqs-block-content a:not(.sqs-block-button-element),
+  .sqs-block-content a:not(.summary-thumbnail-container):not(.sqs-block-button-element),
   .header-nav-folder-item a {
     @include base-link-interaction($size);
   }
