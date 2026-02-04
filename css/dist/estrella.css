@@ -1,21 +1,30 @@
 /* Set base link interaction styles for all links. */
+.header-nav-item a,
+.sqs-block-content a:not(.summary-thumbnail-container):not(.sqs-block-button-element),
+.header-nav-folder-item a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: repeat-x;
+  background-size: 0px 0px;
+  background-position: 0 100%;
+  transition: all 0.2s ease;
+}
 .header-nav-item a:hover, .header-nav-item a:focus,
 .sqs-block-content a:not(.summary-thumbnail-container):not(.sqs-block-button-element):hover,
 .sqs-block-content a:not(.summary-thumbnail-container):not(.sqs-block-button-element):focus,
 .header-nav-folder-item a:hover,
 .header-nav-folder-item a:focus {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-repeat: repeat-x;
   background-size: 2px 2px;
-  background-position: 0 100%;
 }
 
 body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a {
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: repeat-x;
-  background-size: 1px 1px;
-  background-position: 0 calc(100% - 0.1em);
-  transition: background-size 0.2s ease;
+  background-size: 0px 0px;
+  background-position: 0 100%;
+  transition: all 0.2s ease;
+}
+body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a:hover, body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a:focus {
+  background-size: 2px 2px;
 }
 body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a .header-nav-folder-item-content {
   background-image: none;
