@@ -3,6 +3,24 @@
 @use "../_scss/typography" as *;
 @use "../_scss/announcement_bar" as *;
 
+// Color Reference. Set in UI Settings.
+// --white-hsl: 0, 0%, 100%;
+// --black-hsl: 20.28, 62.83%, 44.31%;
+// --accent-hsl: 48, 83%, 51.57%;
+// --lightAccent-hsl: 33, 28.57%, 27.45%;
+// --darkAccent-hsl: 96, 13.76%, 42.75%;
+// --safeLightAccent-hsl: 48, 83%, 51.57%;
+// --safeDarkAccent-hsl: 0, 0%, 0%;
+// --safeInverseAccent-hsl: 0, 0%, 0%;
+
+:root {
+  --heading-font-font-family: wausau, rye, sans-serif;
+  --body-font-font-family: los-feliz, cabin, serif;
+  --primary-button-font-font-family: wausau, cabin, serif;
+  --secondary-button-font-font-family: los-feliz, cabin, serif;
+  --tertiary-button-font-font-family: los-feliz, cabin, serif;
+}
+
 h2,
 h3,
 h4 {

@@ -23,17 +23,16 @@ h1 {
 .header-nav-folder-item a:focus {
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: repeat-x;
-  background-size: 1px 1px;
+  background-size: 2px 2px;
   background-position: 0 100%;
-  background-position: 0 calc(100% - 0.1em);
 }
 
 body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a {
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: repeat-x;
   background-size: 1px 1px;
-  background-position: 0 100%;
   background-position: 0 calc(100% - 0.1em);
+  transition: background-size 0.2s ease;
 }
 body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a .header-nav-folder-item-content {
   background-image: none;
@@ -55,12 +54,25 @@ body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a 
 .summary-v2-block .summary-title a {
   /* Set link interaction styles for the title. */
 }
-.summary-v2-block .summary-title a:hover, .summary-v2-block .summary-title a:focus {
+.summary-v2-block .summary-title a .header-nav-item a:hover, .summary-v2-block .summary-title a .header-nav-item a:focus,
+.summary-v2-block .summary-title a .sqs-block-content a:not(.summary-thumbnail-container):not(.sqs-block-button-element):hover,
+.summary-v2-block .summary-title a .sqs-block-content a:not(.summary-thumbnail-container):not(.sqs-block-button-element):focus,
+.summary-v2-block .summary-title a .header-nav-folder-item a:hover,
+.summary-v2-block .summary-title a .header-nav-folder-item a:focus {
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: repeat-x;
-  background-size: 3px 3px;
+  background-size: 2px 2px;
   background-position: 0 100%;
+}
+.summary-v2-block .summary-title a body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
   background-position: 0 calc(100% - 0.1em);
+  transition: background-size 0.2s ease;
+}
+.summary-v2-block .summary-title a body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a .header-nav-folder-item-content {
+  background-image: none;
 }
 .summary-v2-block {
   /* Zoom and drop shadow on hover for thumbnail. */

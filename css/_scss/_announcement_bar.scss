@@ -1,7 +1,5 @@
-/* ===================================================================
-   Golden History Tours - Announcement Banner Hover/Active States
-   =================================================================== */
 @mixin set-announcement-bar-interaction($style: underline) {
+    /* Announcement Bar Interaction Styles */
 
     /* Target the Squarespace announcement bar container */
     .sqs-announcement-bar-dropzone {
@@ -20,18 +18,23 @@
         cursor: pointer;
     }
 
-    @if $style == "underline" {
+    @if $style =="underline" {
         @include _announcement-bar-underline();
     }
-    @if $style == "brightness" {
+
+    @if $style =="brightness" {
         @include _announcement-bar-brightness();
     }
-    @if $style == "scale" {
+
+    @if $style =="scale" {
         @include _announcement-bar-scale();
     }
-    @if $style == "color" {
+
+    @if $style =="color" {
         @include _announcement-bar-color();
     }
+
+    @include _announcement-bar-accessibility();
 }
 
 @mixin _announcement-bar-underline() {
@@ -73,38 +76,38 @@
     }
 }
 
-/* ===================================================================
-   Accessibility Improvements
-   =================================================================== */
+@mixin _announcement-bar-accessibility() {
 
-/* Focus state for keyboard navigation */
-.sqs-announcement-bar-dropzone a:focus {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
-}
-
-.sqs-announcement-bar-dropzone a:focus:not(:focus-visible) {
-    outline: none;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    .sqs-announcement-bar-dropzone a:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 3px;
-    }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-
-    .sqs-announcement-bar-dropzone a,
-    .sqs-announcement-bar-dropzone a::after {
-        transition: none;
+    /* --- Accessibility Improvements for the Announcement Bar --- */
+    /* Focus state for keyboard navigation */
+    .sqs-announcement-bar-dropzone a:focus {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
     }
 
-    .sqs-announcement-bar-dropzone a:hover,
-    .sqs-announcement-bar-dropzone a:active {
-        transform: none;
+    .sqs-announcement-bar-dropzone a:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+        .sqs-announcement-bar-dropzone a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+        }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+
+        .sqs-announcement-bar-dropzone a,
+        .sqs-announcement-bar-dropzone a::after {
+            transition: none;
+        }
+
+        .sqs-announcement-bar-dropzone a:hover,
+        .sqs-announcement-bar-dropzone a:active {
+            transform: none;
+        }
     }
 }

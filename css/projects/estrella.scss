@@ -1,0 +1,12 @@
+@use "../_scss/links" as *;
+@use "../_scss/navigation" as *;
+@use "../_scss/typography" as *;
+@use "../_scss/announcement_bar" as *;
+
+/* Set base link interaction styles for all links. */
+@include set-base-link-interaction();
+
+/* Set submenu spacing. */
+@include set-submenu-spacing();
+
+@include set-announcement-bar-interaction("underline");

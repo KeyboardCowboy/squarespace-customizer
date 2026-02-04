@@ -40,7 +40,7 @@ h1 {
 
     .summary-title a {
         /* Set link interaction styles for the title. */
-        @include base-link-interaction(3px);
+        @include set-base-link-interaction();
     }
 
     /* Zoom and drop shadow on hover for thumbnail. */
