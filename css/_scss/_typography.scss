@@ -19,6 +19,13 @@
 
   @media screen and (min-width: 768px),
   screen and (max-width: calc(1455px)) and (orientation: landscape) {
-      font-size: calc((var(--heading-#{$level}-size-value) - 1) * 1.2vw + 1rem);
+    font-size: calc((var(--heading-#{$level}-size-value) - 1) * 1.2vw + 1rem);
+  }
+}
+
+// Provide a class to apply to a custom text block to hide it visually.  For Markdown versions of pages.
+@mixin hidden-markdown() {
+  body:not(.sqs-is-page-editing) div.hidden-markdown {
+    display: none;
   }
 }

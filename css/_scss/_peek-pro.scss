@@ -1,0 +1,39 @@
+@mixin fix-peek-pro-modals() {
+    /* Requires the Peek Pro Modal Fix js snippet to be loaded */
+    body.peek-modal-active #header,
+    body.peek-modal-active #footer-sections {
+        z-index: -9999;
+    }
+
+    body.peek-modal-active main.container {
+        z-index: 0 !important;
+    }
+
+    body.peek-modal-active article {
+        z-index: auto !important;
+    }
+
+    body.peek-modal-active article>section {
+        z-index: 0 !important;
+    }
+
+    body.peek-modal-active .spinnaker-modal {
+        z-index: 99999 !important;
+        position: fixed !important;
+        pointer-events: auto !important;
+    }
+
+    body.peek-modal-active .spinnaker-modal #spinnaker-modal-overlay {
+        z-index: 999998 !important;
+        pointer-events: auto !important;
+    }
+
+    body.peek-modal-active .spinnaker-modal #spinnaker-modal-content {
+        z-index: 999999 !important;
+        pointer-events: auto !important;
+    }
+
+    body.peek-modal-active .spinnaker-modal * {
+        pointer-events: auto !important;
+    }
+}

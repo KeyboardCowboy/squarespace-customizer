@@ -2,6 +2,7 @@
 @use "../_scss/navigation" as *;
 @use "../_scss/typography" as *;
 @use "../_scss/announcement_bar" as *;
+@use "../_scss/peek-pro" as *;
 
 // Color Reference. Set in UI Settings.
 // --white-hsl: 0, 0%, 100%;
@@ -27,11 +28,16 @@ h4 {
   margin: 2rem 0 1rem 0;
 }
 
+@include hidden-markdown();
+
 /* Set base link interaction styles for all links. */
 @include set-base-link-interaction();
 
 /* Set submenu spacing. */
 @include set-submenu-spacing();
+
+/* Fix Peek Pro modals */
+@include fix-peek-pro-modals();
 
 /* Blog Metadata Tweaks*/
 .blog-item-category {

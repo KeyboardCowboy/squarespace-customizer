@@ -28,6 +28,9 @@ h1 {
 /* Set submenu spacing. */
 @include set-submenu-spacing();
 
+/* Hide hidden markdown text blocks. */
+@include hidden-markdown();
+
 /**
  * Summary Blocks
  */

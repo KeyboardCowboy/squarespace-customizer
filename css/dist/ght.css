@@ -12,6 +12,10 @@ h4 {
   margin: 2rem 0 1rem 0;
 }
 
+body:not(.sqs-is-page-editing) div.hidden-markdown {
+  display: none;
+}
+
 /* Set base link interaction styles for all links. */
 .header-nav-item a,
 .sqs-block-content a:not(.summary-thumbnail-container):not(.sqs-block-button-element),
@@ -47,6 +51,45 @@ body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a 
 /* Set submenu spacing. */
 .header-nav-folder-item {
   padding: 0.25rem 0.5rem;
+}
+
+/* Fix Peek Pro modals */
+/* Requires the Peek Pro Modal Fix js snippet to be loaded */
+body.peek-modal-active #header,
+body.peek-modal-active #footer-sections {
+  z-index: -9999;
+}
+
+body.peek-modal-active main.container {
+  z-index: 0 !important;
+}
+
+body.peek-modal-active article {
+  z-index: auto !important;
+}
+
+body.peek-modal-active article > section {
+  z-index: 0 !important;
+}
+
+body.peek-modal-active .spinnaker-modal {
+  z-index: 99999 !important;
+  position: fixed !important;
+  pointer-events: auto !important;
+}
+
+body.peek-modal-active .spinnaker-modal #spinnaker-modal-overlay {
+  z-index: 999998 !important;
+  pointer-events: auto !important;
+}
+
+body.peek-modal-active .spinnaker-modal #spinnaker-modal-content {
+  z-index: 999999 !important;
+  pointer-events: auto !important;
+}
+
+body.peek-modal-active .spinnaker-modal * {
+  pointer-events: auto !important;
 }
 
 /* Blog Metadata Tweaks*/

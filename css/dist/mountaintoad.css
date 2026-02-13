@@ -52,6 +52,11 @@ body:not(.header--menu-open) .header-nav-item .header-nav-folder-item--active a 
   padding: 0.25rem 0.5rem;
 }
 
+/* Hide hidden markdown text blocks. */
+body:not(.sqs-is-page-editing) div.hidden-markdown {
+  display: none;
+}
+
 /**
  * Summary Blocks
  */
