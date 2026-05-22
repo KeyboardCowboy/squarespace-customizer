@@ -1,0 +1,16 @@
+.summary-thumbnail-event-date-custom > span {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 2px 0;
+}
+
+.summary-thumbnail-event-date-custom .weekday-short {
+  font-size: 12px;
+}
+
+.summary-thumbnail-event-date-custom .month-short {
+  font-weight: bold;
+  text-transform: uppercase;
+}

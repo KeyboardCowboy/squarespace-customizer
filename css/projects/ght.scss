@@ -1,8 +1,5 @@
-@use "../_scss/links" as *;
-@use "../_scss/navigation" as *;
-@use "../_scss/typography" as *;
-@use "../_scss/announcement_bar" as *;
-@use "../_scss/peek-pro" as *;
+@use "sass:meta";
+@use "./base" as *;
 
 // Color Reference. Set in UI Settings.
 // --white-hsl: 0, 0%, 100%;
@@ -20,12 +17,7 @@
   --primary-button-font-font-family: wausau, cabin, serif;
   --secondary-button-font-font-family: los-feliz, cabin, serif;
   --tertiary-button-font-font-family: los-feliz, cabin, serif;
-
-  --color-lightest: hsla(var(--white-hsl), 1);
-  --color-light: hsla(var(--lightAccent-hsl), 1);
-  --color-bright: hsla(var(--accent-hsl), 1);
-  --color-dark: hsla(var(--darkAccent-hsl), 1);
-  --color-darkest: hsla(var(--black-hsl), 1);
+  @include apply-color-variables();
 }
 
 h2,
@@ -34,16 +26,11 @@ h4 {
   margin: 2rem 0 1rem 0;
 }
 
-@include hidden-markdown();
-
-/* Set base link interaction styles for all links. */
-@include set-base-link-interaction();
-
-/* Set submenu spacing. */
-@include set-submenu-spacing();
+@include meta.load-css("../_scss/patterns/hidden-markdown");
+@include apply-base();
 
 /* Fix Peek Pro modals */
-@include fix-peek-pro-modals();
+@include meta.load-css("../_scss/patterns/peek-pro-modal-fix");
 
 /* Blog Metadata Tweaks*/
 .blog-item-category {

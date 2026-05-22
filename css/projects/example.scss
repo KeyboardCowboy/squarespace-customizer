@@ -13,7 +13,7 @@
 */
 
 /* Start with site-specific overrides here. */
-@use "../_scss/typography" as *;
+@use "../_scss/mixins/typography" as *;
 
 
 h4.accordion-item__title-wrapper {

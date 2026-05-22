@@ -1,0 +1,8 @@
+// Define variables to represent the palette colors.
+@mixin color-variables() {
+    --color-lightest: hsla(var(--white-hsl), 1);
+    --color-light: hsla(var(--lightAccent-hsl), 1);
+    --color-bright: hsla(var(--accent-hsl), 1);
+    --color-dark: hsla(var(--darkAccent-hsl), 1);
+    --color-darkest: hsla(var(--black-hsl), 1);
+}

@@ -3,11 +3,8 @@
  * See https://github.com/KeyboardCowboy/squarespace-customizer for more details.
  */
 
-@use "../_scss/links" as *;
-@use "../_scss/dates" as *;
-@use "../_scss/typography" as *;
-@use "../_scss/summary-blocks" as *;
-@use "../_scss/navigation" as *;
+@use "sass:meta";
+@use "./base" as *;
 
 /**
  * Variable definitions
@@ -22,14 +19,10 @@ h1 {
     font-family: var(--heading-font-alt-font-family);
 }
 
-/* Set base link interaction styles for all links. */
-@include set-base-link-interaction();
-
-/* Set submenu spacing. */
-@include set-submenu-spacing();
+@include apply-base();
 
 /* Hide hidden markdown text blocks. */
-@include hidden-markdown();
+@include meta.load-css("../_scss/patterns/hidden-markdown");
 
 /**
  * Summary Blocks
@@ -47,10 +40,10 @@ h1 {
     }
 
     /* Zoom and drop shadow on hover for thumbnail. */
-    @include zoom-thumbnail-on-hover();
+    @include meta.load-css("../_scss/patterns/summary-thumbnail-hover");
 
     /* Style the date components created from the date formatter. */
-    @include theme-formatted-date-card();
+    @include meta.load-css("../_scss/patterns/formatted-date-card");
 }
 
 /**

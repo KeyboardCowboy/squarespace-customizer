@@ -23,9 +23,3 @@
   }
 }
 
-// Provide a class to apply to a custom text block to hide it visually.  For Markdown versions of pages.
-@mixin hidden-markdown() {
-  body:not(.sqs-is-page-editing) div.hidden-markdown {
-    display: none;
-  }
-}
